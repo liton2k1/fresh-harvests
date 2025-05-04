@@ -12,7 +12,8 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(!open);
   return (
-    <div className="bg-white lg:py-5 py-2">
+    <div className="bg-white shadow-md lg:py-5 py-2">
+      {/* absolute top-0 left-1/2 transform -translate-x-1/2 z-20 w-full */}
       <Container>
         <div className="flex justify-between items-center">
           <div>
