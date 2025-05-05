@@ -32,41 +32,84 @@ const Navbar = () => {
               }`}
             >
               <li>
-                <Link href="#home">Home</Link>
+                <Link
+                  href="#home"
+                  className="block px-4 py-2 lg:p-0 text-white"
+                >
+                  Home
+                </Link>
               </li>
               <li>
-                <Link href="#services">Shop</Link>
+                <Link
+                  href="#services"
+                  className="block px-4 py-2 lg:p-0 text-white"
+                >
+                  Shope
+                </Link>
               </li>
               <li>
-                <Link href="#why-choose-us">About Us</Link>
+                <Link
+                  href="#why-choose-us"
+                  className="block px-4 py-2 lg:p-0 text-white"
+                >
+                  About Us
+                </Link>
               </li>
               <li>
-                <Link href="#work-process">Blog</Link>
+                <Link
+                  href="#work-process"
+                  className="block px-4 py-2 lg:p-0 text-white"
+                >
+                  Blog
+                </Link>
               </li>
             </ul>
+
             <div>
               <div className="hidden lg:block">
-                <ul className="flex items-center gap-5">
-                  <li className="flex items-center gap-2">
+                <div className="flex items-center gap-5">
+                  <Link
+                    href="/favorite"
+                    className="flex items-center gap-2 text-white"
+                  >
                     <FaHeart /> Favorite
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <FaCartShopping /> Cart
-                  </li>
-                  <li
-                    className="border px-6 p-2 rounded cursor-pointer"
+                  </Link>
+                  <Link
+                    href="/cart"
+                    className="relative flex items-center gap-2 text-white"
+                  >
+                    <FaCartShopping />
+                    <span className="absolute -top-2 right-7 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                      3
+                    </span>
+                    <span className="hidden lg:inline">Cart</span>
+                  </Link>
+
+                  <button
+                    className="border px-6 p-2 rounded cursor-pointer text-white"
                     onClick={() => setModalType("login")}
                   >
                     Sign in
-                  </li>
-                </ul>
+                  </button>
+                </div>
               </div>
-              <div className="flex gap-2">
-                <li className="lg:hidden flex items-center gap-2">
+              <div className="flex gap-5">
+                <Link
+                  href="/cart"
+                  className="relative lg:hidden flex items-center gap-2 text-white"
+                >
                   <FaCartShopping />
-                </li>
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                    3
+                  </span>
+                </Link>
+
                 <div onClick={handleOpen} className="lg:hidden cursor-pointer">
-                  {open ? <MdClose size={24} /> : <MdMenu size={24} />}
+                  {open ? (
+                    <MdClose size={24} color="white" />
+                  ) : (
+                    <MdMenu size={24} color="white" />
+                  )}
                 </div>
               </div>
             </div>
@@ -74,6 +117,7 @@ const Navbar = () => {
         </Container>
       </div>
 
+      {/* Modals */}
       {modalType === "register" && (
         <RegisterModal
           onClose={() => setModalType(null)}

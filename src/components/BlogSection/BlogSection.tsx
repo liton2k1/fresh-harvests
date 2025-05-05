@@ -3,7 +3,7 @@ import Image from "next/image";
 import blog1 from "@/assets/blog (1).png";
 import blog2 from "@/assets/blog (2).png";
 import blog3 from "@/assets/blog (3).png";
-import leaf from "@/assets/Group.png";
+import leaf from "@/assets/leaf (7).png";
 
 const blogPosts = [
   {

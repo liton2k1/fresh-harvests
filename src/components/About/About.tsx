@@ -3,8 +3,8 @@ import about from "@/assets/about.png";
 import Container from "../shared/Container/Container";
 import logo from "@/assets/Logo.png";
 import guava from "@/assets/guava.png";
-import group from "@/assets/Group.png";
-import group2 from "@/assets/Group 2.png";
+import group from "@/assets/leaf (7).png";
+import group2 from "@/assets/group.png";
 
 export default function AboutSection() {
   return (
