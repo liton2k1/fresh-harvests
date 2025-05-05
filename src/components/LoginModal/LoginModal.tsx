@@ -11,7 +11,8 @@ export default function LoginModal({ onClose, onSwitch }: { onClose: () => void,
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white w-full max-w-md p-6 rounded-lg relative">
+     <div className='md:mx-0 mx-3'>
+     <div className="bg-white w-full max-w-md p-6 rounded-lg relative">
         <button onClick={onClose} className="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
           <RxCross2 size={20} />
         </button>
@@ -80,6 +81,7 @@ export default function LoginModal({ onClose, onSwitch }: { onClose: () => void,
           </button>
         </p>
       </div>
+     </div>
     </div>
   );
 }
