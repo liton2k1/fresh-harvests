@@ -70,7 +70,7 @@ const Testimonials = () => {
 
           {/* Content */}
           <div className="inline-block">
-            <p className="bg-[#f1f5ec] text-[#749b3f] font-semibold inline-block px-4 py-1 rounded-full text-sm mb-4">
+            <p className="bg-[#f1f5ec] text-[#749b3f] font-semibold inline-block px-4 py-1 rounded-md text-sm mb-4">
               Testimonial
             </p>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-800">
@@ -94,16 +94,18 @@ const Testimonials = () => {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="grid grid-cols-12 items-center justify-center gap-10">
-                <div className="col-span-3">
+              <div className="grid md:grid-cols-12 items-center justify-center gap-10">
+                <div className="md:col-span-3">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
                     className="rounded-full object-cover w-full h-full"
                   />
                 </div>
-                <div className="col-span-9 bg-[#f4f6f6] p-10 rounded-xl">
-                  <p className="text-sm mb-3">{testimonial.feedback}</p>
+                <div className="md:col-span-9 bg-[#f4f6f6] p-10 rounded-xl">
+                  <p className="text-sm mb-3 text-justify">
+                    {testimonial.feedback}
+                  </p>
                   <h3 className="flex items-center gap-2 text-sm font-semibold">
                     {testimonial.name} -{" "}
                     <span className="text-xs text-gray-600">
