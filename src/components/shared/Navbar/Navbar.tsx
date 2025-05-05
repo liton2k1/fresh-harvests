@@ -1,122 +1,144 @@
 "use client";
 
 import { useState } from "react";
-import Container from "../Container/Container";
 import logo from "@/assets/Logo.png";
 import Image from "next/image";
-import "./Navbar.css";
 import Link from "next/link";
+import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import { MdClose, MdMenu } from "react-icons/md";
-import { FaCartShopping, FaHeart } from "react-icons/fa6";
+import Container from "../Container/Container";
 import RegisterModal from "@/components/RegisterModal/RegisterModal";
 import LoginModal from "@/components/LoginModal/LoginModal";
 
 const Navbar = () => {
   const [modalType, setModalType] = useState<"login" | "register" | null>(null);
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(!open);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      <div className="lg:py-5 py-2 absolute top-0 left-1/2 transform -translate-x-1/2 z-20 w-full">
-        <Container>
-          <div className="flex justify-between items-center">
-            <div>
-              <Link href="#home">
-                <Image src={logo} alt="logo" className="w-40" />
-              </Link>
-            </div>
-            <ul
-              className={`lg:flex justify-between gap-5 nav-items ${
-                open ? "block" : "hidden"
-              }`}
-            >
-              <li>
-                <Link
-                  href="#home"
-                  className="block px-4 py-2 lg:p-0 text-white"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#services"
-                  className="block px-4 py-2 lg:p-0 text-white"
-                >
-                  Shope
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#why-choose-us"
-                  className="block px-4 py-2 lg:p-0 text-white"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#work-process"
-                  className="block px-4 py-2 lg:p-0 text-white"
-                >
-                  Blog
-                </Link>
-              </li>
-            </ul>
-
-            <div>
-              <div className="hidden lg:block">
-                <div className="flex items-center gap-5">
-                  <Link
-                    href="/favorite"
-                    className="flex items-center gap-2 text-white"
-                  >
-                    <FaHeart /> Favorite
-                  </Link>
-                  <Link
-                    href="/cart"
-                    className="relative flex items-center gap-2 text-white"
-                  >
-                    <FaCartShopping />
-                    <span className="absolute -top-2 right-7 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-                      3
-                    </span>
-                    <span className="hidden lg:inline">Cart</span>
-                  </Link>
-
-                  <button
-                    className="border px-6 p-2 rounded cursor-pointer text-white"
-                    onClick={() => setModalType("login")}
-                  >
-                    Sign in
-                  </button>
-                </div>
-              </div>
-              <div className="flex gap-5">
-                <Link
-                  href="/cart"
-                  className="relative lg:hidden flex items-center gap-2 text-white"
-                >
-                  <FaCartShopping />
-                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-                    3
-                  </span>
-                </Link>
-
-                <div onClick={handleOpen} className="lg:hidden cursor-pointer">
-                  {open ? (
-                    <MdClose size={24} color="white" />
-                  ) : (
-                    <MdMenu size={24} color="white" />
-                  )}
-                </div>
-              </div>
-            </div>
+    <div className="bg-white">
+      <Container>
+        <nav className="flex items-center justify-between py-6">
+          {/* Logo */}
+          <div className="w-48">
+            <Image src={logo} alt="Logo" className="w-full" />
           </div>
-        </Container>
-      </div>
 
+          {/* Desktop Menu */}
+          <ul className="hidden lg:flex gap-16 text-gray-600">
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/">Shop</Link>
+            </li>
+            <li>
+              <Link href="/">About Us</Link>
+            </li>
+            <li>
+              <Link href="/">Blog</Link>
+            </li>
+          </ul>
+
+          {/* Icons + Sign In */}
+          <div className="hidden lg:flex items-center gap-5 text-white">
+            <Link href="/" className="flex items-center gap-2 text-gray-600">
+              <FaHeart size={20} color="#749B3F" /> Favorite
+            </Link>
+            <Link
+              href="/"
+              className="flex items-center gap-2 text-gray-600 relative"
+            >
+              <div className="relative">
+                <FaShoppingCart size={20} color="#749B3F" />
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
+                  3
+                </span>
+              </div>
+              Cart
+            </Link>
+            <button
+              onClick={() => setModalType("login")}
+              className="border border-gray-600 text-gray-800 px-4 py-2 rounded font-semibold"
+            >
+              Sign in
+            </button>
+          </div>
+
+          {/* Hamburger */}
+          <button
+            className="lg:hidden text-gray-600 flex items-center gap-3"
+            onClick={() => setIsOpen(true)}
+          >
+            <Link
+              href="/"
+              className="flex items-center gap-2 font-light relative"
+            >
+              <div className="relative">
+                <FaShoppingCart size={20} />
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
+                  3
+                </span>
+              </div>
+            </Link>
+            <MdMenu size={24} />
+          </button>
+        </nav>
+      </Container>
+
+      {/* Sidebar Overlay */}
+      <div
+        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
+          isOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setIsOpen(false)}
+      />
+
+      {/* Sidebar */}
+      <div
+        className={`fixed top-0 left-0 w-64 h-full bg-[#749B3F] text-white p-6 z-50 transform transition-transform duration-300 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        {/* Close button */}
+        <div className="flex items-center justify-between mb-6">
+          <h4>Fresh Harvests</h4>
+          <button onClick={() => setIsOpen(false)}>
+            <MdClose size={24} />
+          </button>
+        </div>
+
+        {/* Nav Links */}
+        <ul className="space-y-4 font-light">
+          <li>
+            <Link href="/" onClick={() => setIsOpen(false)}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/" onClick={() => setIsOpen(false)}>
+              Shop
+            </Link>
+          </li>
+          <li>
+            <Link href="/" onClick={() => setIsOpen(false)}>
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link href="/" onClick={() => setIsOpen(false)}>
+              Blog
+            </Link>
+          </li>
+          <li>
+            <Link href="/" onClick={() => setIsOpen(false)}>
+              Favorite
+            </Link>
+          </li>
+          <button onClick={() => setModalType("login")}>Sign In</button>
+        </ul>
+      </div>
       {/* Modals */}
       {modalType === "register" && (
         <RegisterModal
@@ -130,7 +152,7 @@ const Navbar = () => {
           onSwitch={() => setModalType("register")}
         />
       )}
-    </>
+    </div>
   );
 };
 

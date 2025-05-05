@@ -12,8 +12,8 @@ const TabSection = () => {
           onClick={() => setActiveTab("description")}
           className={`px-6 py-2 text-sm font-medium rounded-md ${
             activeTab === "description"
-              ? " bg-orange-500 text-white"
-              : "border text-gray-300"
+              ? " bg-[#FF6A1A] text-white"
+              : "border text-gray-600"
           }`}
         >
           Description
@@ -22,8 +22,8 @@ const TabSection = () => {
           onClick={() => setActiveTab("review")}
           className={`px-6 py-2 text-sm font-medium rounded-md ${
             activeTab === "review"
-              ? " bg-orange-500 text-white"
-              : "border text-gray-300"
+              ? " bg-[#FF6A1A] text-white"
+              : "border text-gray-600"
           }`}
         >
           Review
@@ -36,11 +36,16 @@ const TabSection = () => {
           <div>
             <h3 className="text-xl font-semibold mb-2">Hotel Description</h3>
             <p>
-              Whether you&apos;re at Hotel Coastal Peace for business or
-              leisure, our rooms offer everything you need for a comfortable
-              stay. Located along the world’s longest sandy beach in Cox’s
-              Bazar, just 5 minutes from the airport. Enjoy luxury at an
-              affordable price.
+              Our coconuts are sustainably grown, ensuring the best quality and
+              taste. Each coconut is handpicked and carefully prepared, offering
+              you the freshest product possible. Rich in healthy fats,
+              electrolytes, and essential nutrients, coconuts provide both
+              hydration and nourishment. Whether you’re using the water, flesh,
+              or milk, our coconuts bring versatility to your kitchen while
+              supporting healthy living. Perfect for smoothies, desserts,
+              curries, and more — let the natural sweetness of the coconut
+              elevate your recipes. Enjoy the tropical goodness in its purest
+              form, directly from nature.
             </p>
           </div>
         )}
@@ -49,14 +54,14 @@ const TabSection = () => {
           <div>
             <h3 className="text-xl font-semibold mb-2">Customer Reviews</h3>
             <ul className="space-y-4">
-              <li className="border p-4 rounded shadow">
+              <li className="border p-4 rounded-md">
                 <p className="font-semibold">⭐️⭐️⭐️⭐️⭐️ John D.</p>
                 <p>
                   Great stay! Very clean and close to the beach. Will come
                   again!
                 </p>
               </li>
-              <li className="border p-4 rounded shadow">
+              <li className="border p-4 rounded-md">
                 <p className="font-semibold">⭐️⭐️⭐️⭐️ Sarah W.</p>
                 <p>
                   The service was excellent. Loved the food and view from the

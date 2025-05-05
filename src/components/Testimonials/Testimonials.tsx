@@ -57,14 +57,14 @@ const Testimonials = () => {
     },
   ];
   return (
-    <div className="my-28">
-      <Container>
+    <div className="mt-20">
+      <div className="max-w-[1000px] mx-auto px-3">
         <div className="relative text-center my-20">
           {/* Decorative leaves */}
-          <div className="absolute left-0 top-[140px] transform -translate-y-1/2">
+          <div className="absolute left-0 md:top-[140px] top-10 transform -translate-y-1/2">
             <Image src={leafLeft} alt="Leaf Left" className="w-12 md:w-16" />
           </div>
-          <div className="absolute right-0 top-[200px] transform -translate-y-1/2">
+          <div className="absolute right-0 md:top-[200px] transform -translate-y-1/2">
             <Image src={leafRight} alt="Leaf Right" className="w-12 md:w-16" />
           </div>
 
@@ -95,14 +95,14 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
               <div className="grid md:grid-cols-12 items-center justify-center gap-10">
-                <div className="md:col-span-3">
+                <div className="md:col-span-4">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
                     className="rounded-full object-cover w-full h-full"
                   />
                 </div>
-                <div className="md:col-span-9 bg-[#f4f6f6] p-10 rounded-xl">
+                <div className="md:col-span-8 bg-[#f4f6f6] p-10 rounded-xl">
                   <p className="text-sm mb-3 text-justify">
                     {testimonial.feedback}
                   </p>
@@ -117,7 +117,7 @@ const Testimonials = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </Container>
+      </div>
     </div>
   );
 };

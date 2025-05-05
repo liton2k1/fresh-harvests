@@ -2,14 +2,14 @@ import Image from "next/image";
 import about from "@/assets/about.png";
 import Container from "../shared/Container/Container";
 import logo from "@/assets/Logo.png";
-import guava from "@/assets/guava.png";
+import lettuce from "@/assets/lettuce.png";
 import group from "@/assets/leaf (7).png";
 import group2 from "@/assets/group.png";
 
 export default function AboutSection() {
   return (
     <Container>
-      <div className="bg-white flex flex-col lg:flex-row items-center md:gap-8 gap-12 mb-20">
+      <div className="bg-white flex flex-col lg:flex-row items-center lg:gap-10 gap-20 mt-20">
         {/* Left side content */}
         <div className="relative w-full lg:w-1/2 flex justify-center">
           <Image
@@ -32,29 +32,29 @@ export default function AboutSection() {
             alt="Leaf 2 icon"
             width={50}
             height={50}
-            className="absolute right-12 top-32 md:right-[70px] md:top-[350px] w-8 md:w-[50px]"
+            className="absolute right-12 top-32 lg:right-[65px] md:right-[150px] lg:top-[400px] md:top-[290px] w-8 md:w-[60px]"
           />
 
-          <div className="absolute top-[65%] left-[60%] transform -translate-x-1/2 -translate-y-1/2 lg:top-[365px] lg:left-[360px]">
+          <div className="absolute top-[65%] left-[60%] transform -translate-x-1/2 -translate-y-1/2 lg:top-[430px] lg:left-[420px]">
             <Image
               src={logo}
               alt="Fresh Harvest logo"
-              className="w-[65px] md:w-32 bg-white md:px-3 px-2 md:py-2 py-1 rounded shadow"
+              className="w-[65px] md:w-36 bg-white md:px-3 px-2 md:py-2 py-1 rounded shadow"
             />
           </div>
 
           {/* Product Card */}
-          <div className="absolute bottom-[-40px] right-6 md:right-28 bg-white shadow-lg rounded-md p-2 text-center w-20 md:w-32 leading-none">
+          <div className="absolute lg:-bottom-8 md:-bottom-[70px] bottom-[-40px] right-6 lg:right-28 md:right-36 bg-white shadow-lg rounded-md p-2 text-center w-20 md:w-36 leading-none">
             <Image
-              src={guava}
+              src={lettuce}
               alt="Mushroom"
               width={80}
               height={70}
-              className="w-full md:h-auto h-10"
+              className="w-full md:h-28 h-10 bg-[#F4F6F6] rounded-md"
             />
             <p className="md:text-xs text-[8px] font-semibold mt-1">Mushroom</p>
             <p className="md:text-xs text-[7px] text-gray-500 mt-1">$2.1/kg</p>
-            <button className="border border-gray-200 md:text-xs text-[7px] text-gray-600 px-2 rounded !mt-0">
+            <button className="border border-gray-200 md:text-xs text-[7px] text-gray-600 px-2 py-1 rounded mt-1">
               Add to cart
             </button>
           </div>

@@ -13,3 +13,13 @@
 .custom-swiper-pagination .swiper-pagination-bullet-active {
   background-color: #749b3f !important;
 }
+
+.image-gallery-bullets .image-gallery-bullet {
+  box-shadow: none !important;
+  background-color: #749b3f !important;
+  opacity: 0.4;
+}
+
+.image-gallery-bullets .image-gallery-bullet.active {
+  opacity: 1;
+}

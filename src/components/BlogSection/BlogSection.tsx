@@ -4,6 +4,7 @@ import blog1 from "@/assets/blog (1).png";
 import blog2 from "@/assets/blog (2).png";
 import blog3 from "@/assets/blog (3).png";
 import leaf from "@/assets/leaf (7).png";
+import { IoArrowForward } from "react-icons/io5";
 
 const blogPosts = [
   {
@@ -33,7 +34,7 @@ const blogPosts = [
 
 const BlogSection = () => {
   return (
-    <section className="my-28 px-4">
+    <section className="mt-20 px-4">
       <div className="text-center max-w-3xl mx-auto relative">
         {/* Optional decorative leaf */}
         <Image
@@ -56,7 +57,7 @@ const BlogSection = () => {
       {/* Blog Grid */}
       <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {blogPosts.map((post) => (
-          <div key={post.id} className="rounded-xl overflow-hidden shadow-sm">
+          <div key={post.id} className="rounded-xl overflow-hidden">
             <Image
               src={post.image}
               alt={post.title}
@@ -69,9 +70,9 @@ const BlogSection = () => {
               </h3>
               <a
                 href={post.link}
-                className="text-[#e63946] text-sm font-semibold mt-3 inline-flex items-center gap-1 hover:underline"
+                className="text-[#e63946] font-semibold mt-3 inline-flex items-center gap-1 hover:underline"
               >
-                Read More <span className="text-lg">→</span>
+                Read More <IoArrowForward />
               </a>
             </div>
           </div>

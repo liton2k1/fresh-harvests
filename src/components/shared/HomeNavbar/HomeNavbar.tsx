@@ -7,8 +7,11 @@ import Link from "next/link";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import { MdClose, MdMenu } from "react-icons/md";
 import Container from "../Container/Container";
+import RegisterModal from "@/components/RegisterModal/RegisterModal";
+import LoginModal from "@/components/LoginModal/LoginModal";
 
 const HomeNavbar = () => {
+  const [modalType, setModalType] = useState<"login" | "register" | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -16,33 +19,35 @@ const HomeNavbar = () => {
       <Container>
         <nav className="flex items-center justify-between py-6">
           {/* Logo */}
-          <div className="w-48">
-            <Image src={logo} alt="Logo" className="w-full" />
-          </div>
+          <Link href="/">
+            <div className="w-48">
+              <Image src={logo} alt="Logo" className="w-full" />
+            </div>
+          </Link>
 
           {/* Desktop Menu */}
           <ul className="hidden lg:flex gap-16 text-gray-600">
             <li>
-              <Link href="#">Home</Link>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="#">Shop</Link>
+              <Link href="/">Shop</Link>
             </li>
             <li>
-              <Link href="#">About Us</Link>
+              <Link href="/">About Us</Link>
             </li>
             <li>
-              <Link href="#">Blog</Link>
+              <Link href="/">Blog</Link>
             </li>
           </ul>
 
           {/* Icons + Sign In */}
           <div className="hidden lg:flex items-center gap-5 text-white">
-            <Link href="#" className="flex items-center gap-2 font-light">
+            <Link href="/" className="flex items-center gap-2 font-light">
               <FaHeart size={20} /> Favorite
             </Link>
             <Link
-              href="#"
+              href="/"
               className="flex items-center gap-2 font-light relative"
             >
               <div className="relative">
@@ -53,7 +58,10 @@ const HomeNavbar = () => {
               </div>
               Cart
             </Link>
-            <button className="border border-white px-4 py-2 rounded font-semibold">
+            <button
+              onClick={() => setModalType("login")}
+              className="border border-white px-4 py-2 rounded font-semibold"
+            >
               Sign in
             </button>
           </div>
@@ -64,7 +72,7 @@ const HomeNavbar = () => {
             onClick={() => setIsOpen(true)}
           >
             <Link
-              href="#"
+              href="/"
               className="flex items-center gap-2 font-light relative"
             >
               <div className="relative">
@@ -106,33 +114,46 @@ const HomeNavbar = () => {
         {/* Nav Links */}
         <ul className="space-y-4 font-light">
           <li>
-            <Link href="#" onClick={() => setIsOpen(false)}>
+            <Link href="/" onClick={() => setIsOpen(false)}>
               Home
             </Link>
           </li>
           <li>
-            <Link href="#" onClick={() => setIsOpen(false)}>
+            <Link href="/" onClick={() => setIsOpen(false)}>
               Shop
             </Link>
           </li>
           <li>
-            <Link href="#" onClick={() => setIsOpen(false)}>
+            <Link href="/" onClick={() => setIsOpen(false)}>
               About Us
             </Link>
           </li>
           <li>
-            <Link href="#" onClick={() => setIsOpen(false)}>
+            <Link href="/" onClick={() => setIsOpen(false)}>
               Blog
             </Link>
           </li>
           <li>
-            <Link href="#" onClick={() => setIsOpen(false)}>
+            <Link href="/" onClick={() => setIsOpen(false)}>
               Favorite
             </Link>
           </li>
-          <button>Sign In</button>
+          <button onClick={() => setModalType("login")}>Sign In</button>
         </ul>
       </div>
+      {/* Modals */}
+      {modalType === "register" && (
+        <RegisterModal
+          onClose={() => setModalType(null)}
+          onSwitch={() => setModalType("login")}
+        />
+      )}
+      {modalType === "login" && (
+        <LoginModal
+          onClose={() => setModalType(null)}
+          onSwitch={() => setModalType("register")}
+        />
+      )}
     </div>
   );
 };

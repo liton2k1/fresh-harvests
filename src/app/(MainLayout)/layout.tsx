@@ -1,11 +1,12 @@
+import Footer from "@/components/shared/Footer/Footer";
 
-
-const layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
-      {children}
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-grow">{children}</main>
+      <Footer />
     </div>
   );
 };
 
-export default layout;
+export default Layout;
