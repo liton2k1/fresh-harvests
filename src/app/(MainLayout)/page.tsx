@@ -1,7 +1,6 @@
 import AboutSection from "@/components/About/About";
 import Banner from "@/components/Banner/Banner";
 import BlogSection from "@/components/BlogSection/BlogSection";
-import Footer from "@/components/shared/Footer/Footer";
 import OfferBanner from "@/components/OfferBanner/OfferBanner";
 import Products from "@/components/Products/Products";
 import Testimonials from "@/components/Testimonials/Testimonials";

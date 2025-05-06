@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import appStore from "@/assets/Download App_.png";
+import appStore from "@/assets/app.png";
 import visa from "@/assets/visa.png";
-import paypal from "@/assets/paypal.png";
+import paypal from "@/assets/Paypal.png";
 import applepay from "@/assets/applepay.png";
 import logo from "@/assets/logo.png";
 import call from "@/assets/call.png";

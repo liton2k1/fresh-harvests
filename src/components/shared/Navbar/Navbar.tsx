@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import logo from "@/assets/Logo.png";
+import logo from "@/assets/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
@@ -19,9 +19,11 @@ const Navbar = () => {
       <Container>
         <nav className="flex items-center justify-between py-6">
           {/* Logo */}
-          <div className="w-48">
-            <Image src={logo} alt="Logo" className="w-full" />
-          </div>
+          <Link href="/">
+            <div className="w-48">
+              <Image src={logo} alt="Logo" className="w-full" />
+            </div>
+          </Link>
 
           {/* Desktop Menu */}
           <ul className="hidden lg:flex gap-16 text-gray-600">
@@ -29,23 +31,26 @@ const Navbar = () => {
               <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/">Shop</Link>
+              <Link href="/shop">Shop</Link>
             </li>
             <li>
-              <Link href="/">About Us</Link>
+              <Link href="/about">About Us</Link>
             </li>
             <li>
-              <Link href="/">Blog</Link>
+              <Link href="/blog">Blog</Link>
             </li>
           </ul>
 
           {/* Icons + Sign In */}
           <div className="hidden lg:flex items-center gap-5 text-white">
-            <Link href="/" className="flex items-center gap-2 text-gray-600">
+            <Link
+              href="/favorite"
+              className="flex items-center gap-2 text-gray-600"
+            >
               <FaHeart size={20} color="#749B3F" /> Favorite
             </Link>
             <Link
-              href="/"
+              href="/cart"
               className="flex items-center gap-2 text-gray-600 relative"
             >
               <div className="relative">
@@ -70,7 +75,7 @@ const Navbar = () => {
             onClick={() => setIsOpen(true)}
           >
             <Link
-              href="/"
+              href="/cart"
               className="flex items-center gap-2 font-light relative"
             >
               <div className="relative">
@@ -117,22 +122,22 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/" onClick={() => setIsOpen(false)}>
+            <Link href="/shop" onClick={() => setIsOpen(false)}>
               Shop
             </Link>
           </li>
           <li>
-            <Link href="/" onClick={() => setIsOpen(false)}>
+            <Link href="/about" onClick={() => setIsOpen(false)}>
               About Us
             </Link>
           </li>
           <li>
-            <Link href="/" onClick={() => setIsOpen(false)}>
+            <Link href="/blog" onClick={() => setIsOpen(false)}>
               Blog
             </Link>
           </li>
           <li>
-            <Link href="/" onClick={() => setIsOpen(false)}>
+            <Link href="/favorite" onClick={() => setIsOpen(false)}>
               Favorite
             </Link>
           </li>

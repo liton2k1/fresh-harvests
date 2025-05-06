@@ -1,10 +1,16 @@
 "use client";
-
+import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
+
+type Inputs = {
+  name: string;
+  email: string;
+  password: string;
+};
 
 export default function RegisterModal({
   onClose,
@@ -14,6 +20,8 @@ export default function RegisterModal({
   onSwitch: () => void;
 }) {
   const [showPassword, setShowPassword] = useState(false);
+  const { register, handleSubmit } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -27,10 +35,11 @@ export default function RegisterModal({
 
         <h2 className="text-2xl font-bold text-center mb-6">Register</h2>
 
-        <form className="space-y-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
             <label className="text-sm text-gray-700">Full Name</label>
             <input
+              {...register("name")}
               type="text"
               placeholder="Enter your name"
               className="w-full mt-1 p-3 border rounded-md outline-none focus:ring-2 focus:ring-[#FF6A1A]"
@@ -40,6 +49,7 @@ export default function RegisterModal({
           <div>
             <label className="text-sm text-gray-700">Email</label>
             <input
+              {...register("email")}
               type="email"
               placeholder="Enter your email"
               className="w-full mt-1 p-3 border rounded-md outline-none focus:ring-2 focus:ring-[#FF6A1A]"
@@ -50,6 +60,7 @@ export default function RegisterModal({
             <label className="text-sm text-gray-700">Password</label>
             <div className="relative">
               <input
+                {...register("password")}
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter your password"
                 className="w-full mt-1 p-3 border rounded-md outline-none focus:ring-2 focus:ring-[#FF6A1A]"
@@ -67,7 +78,10 @@ export default function RegisterModal({
             </div>
           </div>
 
-          <button className="w-full bg-[#FF6A1A] text-white py-3 rounded-md hover:bg-orange-600 transition">
+          <button
+            type="submit"
+            className="w-full bg-[#FF6A1A] text-white py-3 rounded-md hover:bg-orange-600 transition"
+          >
             Register
           </button>
         </form>

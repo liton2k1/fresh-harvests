@@ -70,7 +70,7 @@ const BlogSection = () => {
               </h3>
               <a
                 href={post.link}
-                className="text-[#e63946] font-semibold mt-3 inline-flex items-center gap-1 hover:underline"
+                className="text-[#FF6A1A] font-semibold mt-3 inline-flex items-center gap-1 hover:underline"
               >
                 Read More <IoArrowForward />
               </a>
