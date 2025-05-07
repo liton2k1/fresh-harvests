@@ -1,4 +1,3 @@
-// src/components/TabSection/TabSection.tsx
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
@@ -20,7 +19,6 @@ const TabSection: React.FC<TabSectionProps> = ({ description, reviews }) => {
 
   return (
     <div className="max-w-[900px]">
-      {/* Tab Buttons */}
       <div className="flex gap-3 my-10">
         <button
           onClick={() => setActiveTab("description")}
@@ -44,7 +42,6 @@ const TabSection: React.FC<TabSectionProps> = ({ description, reviews }) => {
         </button>
       </div>
 
-      {/* Tab Content */}
       {activeTab === "description" && (
         <div className="text-gray-700 leading-relaxed bg-[#F4F6F6] p-8 rounded-md text-justify">
           {description || "No description available."}

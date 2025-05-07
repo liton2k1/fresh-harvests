@@ -60,7 +60,6 @@ const Testimonials = () => {
     <div className="mt-20">
       <div className="max-w-[1000px] mx-auto px-3">
         <div className="relative text-center my-20">
-          {/* Decorative leaves */}
           <div className="absolute left-0 md:top-[140px] top-10 transform -translate-y-1/2">
             <Image src={leafLeft} alt="Leaf Left" className="w-12 md:w-16" />
           </div>
@@ -68,7 +67,6 @@ const Testimonials = () => {
             <Image src={leafRight} alt="Leaf Right" className="w-12 md:w-16" />
           </div>
 
-          {/* Content */}
           <div className="inline-block">
             <p className="bg-[#f1f5ec] text-[#749b3f] font-semibold inline-block px-4 py-1 rounded-md text-sm mb-4">
               Testimonial

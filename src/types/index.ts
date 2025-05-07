@@ -12,3 +12,15 @@ export type TProduct = {
     createdAt: string;
     updatedAt: string;
 }
+
+export type TInputsRegister = {
+    fullName: string;
+    email: string;
+    password: string;
+  };
+
+export type TInputsLogin = {
+    email: string;
+    password: string;
+    rememberMe: boolean;
+  }

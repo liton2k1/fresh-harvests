@@ -6,18 +6,13 @@ import BannerContent from "../BannerContent/BannerContent";
 const Banner = () => {
   return (
     <div className="relative w-full lg:h-[900px] h-[600px]">
-      {/* Background Image */}
       <Image
         src={bg}
         alt="Banner background"
         className="w-full h-full"
         priority
       />
-
-      {/* Home Navbar */}
       <HomeNavbar />
-
-      {/* Banner content */}
       <BannerContent />
     </div>
   );

@@ -6,7 +6,7 @@ import lettuce from "@/assets/lettuce.png";
 import group from "@/assets/leaf (7).png";
 import group2 from "@/assets/group.png";
 
-export default function AboutSection() {
+const About = () => {
   return (
     <Container>
       <div className="bg-white flex flex-col lg:flex-row items-center lg:gap-10 gap-20 mt-20">
@@ -83,4 +83,5 @@ export default function AboutSection() {
       </div>
     </Container>
   );
-}
+};
+export default About;

@@ -1,4 +1,3 @@
-// src/services/baseApi.js or baseApi.ts
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const baseApi = createApi({
@@ -14,7 +13,21 @@ export const baseApi = createApi({
     getProductById: builder.query({
       query: (id: string) => `/products/${id}`,
     }),
+    login: builder.mutation({
+      query: (body) => ({
+        url: "/auth/login",
+        method: "POST",
+        body,
+      }),
+    }),
+    register: builder.mutation({
+      query: (body) => ({
+        url: "/users/register",
+        method: "POST",
+        body,
+      }),
+    }),
   })
 });
 
-export const { useGetProductsQuery, useGetCategoriesQuery, useGetProductByIdQuery } = baseApi;
+export const { useGetProductsQuery, useGetCategoriesQuery, useGetProductByIdQuery, useLoginMutation, useRegisterMutation } = baseApi;

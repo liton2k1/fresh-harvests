@@ -17,7 +17,6 @@ const Footer = () => {
     <footer className="bg-[#f8fafa] py-12 mt-20">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Logo & Apps */}
           <div className="flex flex-col justify-between h-full">
             <div>
               <Image src={logo} alt="Fresh Harvests" className="w-44 mb-4" />
@@ -30,7 +29,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links 1 */}
           <div>
             <h4 className="font-semibold text-gray-800 mb-4">Quick links 1</h4>
             <ul className="space-y-2 text-sm text-gray-600">
@@ -38,40 +36,38 @@ const Footer = () => {
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/shop">Shop</Link>
+                <Link href="#">Shop</Link>
               </li>
               <li>
-                <Link href="/about">About us</Link>
+                <Link href="#">About us</Link>
               </li>
               <li>
-                <Link href="/blog">Blog</Link>
+                <Link href="#">Blog</Link>
               </li>
               <li>
-                <Link href="/blog/detail">Detail Blog</Link>
+                <Link href="#">Detail Blog</Link>
               </li>
             </ul>
           </div>
 
-          {/* Quick Links 2 */}
           <div>
             <h4 className="font-semibold text-gray-800 mb-4">Quick links 2</h4>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
-                <Link href="/favorites">Favorites</Link>
+                <Link href="#">Favorites</Link>
               </li>
               <li>
-                <Link href="/cart">Cart</Link>
+                <Link href="#">Cart</Link>
               </li>
               <li>
-                <Link href="/signin">Sign in</Link>
+                <Link href="#">Sign in</Link>
               </li>
               <li>
-                <Link href="/register">Register</Link>
+                <Link href="#">Register</Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h4 className="font-semibold text-gray-800 mb-4">Contact us</h4>
             <ul className="space-y-2 text-sm text-gray-600">
@@ -86,7 +82,7 @@ const Footer = () => {
                 Indonesia
               </li>
             </ul>
-            {/* Payment Method */}
+
             <div className="mt-6">
               <p className="font-semibold text-sm mb-2">
                 Accepted Payment Methods:
@@ -106,7 +102,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="border-t mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-800 md:text-sm text-[10px] font-semibold">
             © Copyright 2024. All Rights Reserved by Banana Studio

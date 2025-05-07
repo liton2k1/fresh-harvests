@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import fruitImage from "@/assets/fruits.png";
 import bgLeaf from "@/assets/leaf (3).png";
@@ -7,11 +10,61 @@ import mask2 from "@/assets/leaf (1).png";
 import clipPath from "@/assets/leaf (5).png";
 import Container from "../shared/Container/Container";
 
-export default function OfferBanner() {
+const OfferBanner = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: "00",
+    hours: "00",
+    minutes: "00",
+    seconds: "00",
+  });
+
+  useEffect(() => {
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 3);
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate.getTime() - now;
+
+      if (distance <= 0) {
+        clearInterval(interval);
+        setTimeLeft({
+          days: "00",
+          hours: "00",
+          minutes: "00",
+          seconds: "00",
+        });
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      setTimeLeft({
+        days: String(days).padStart(2, "0"),
+        hours: String(hours).padStart(2, "0"),
+        minutes: String(minutes).padStart(2, "0"),
+        seconds: String(seconds).padStart(2, "0"),
+      });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const countdownLabels = [
+    { label: "Days", value: timeLeft.days },
+    { label: "Hour", value: timeLeft.hours },
+    { label: "Min", value: timeLeft.minutes },
+    { label: "Second", value: timeLeft.seconds },
+  ];
+
   return (
     <div>
       <div className="bg-[#f9f9f9] md:py-32 py-28 relative overflow-hidden mt-20">
-        {/* Background Shapes */}
         <div className="absolute bottom-0 left-0 z-0">
           <Image src={bgLeaf} alt="green shape" width={500} height={500} />
         </div>
@@ -29,7 +82,6 @@ export default function OfferBanner() {
         <Container>
           <div className="lg:px-10 px-3">
             <div className="flex flex-col lg:flex-row items-center justify-between md:gap-8 gap-3 relative z-10">
-              {/* Left content */}
               <div className="text-center lg:text-left">
                 <span className="bg-[#f1f5ec] text-[#749b3f] text-xs font-semibold px-3 py-1 rounded-md inline-block mb-3">
                   Special Offer
@@ -42,35 +94,27 @@ export default function OfferBanner() {
                   <span className="text-[#ff6a19] font-bold">80% OFF</span>
                 </p>
 
-                {/* Countdown */}
                 <div className="flex lg:justify-start justify-center gap-3 mb-6">
-                  {["03 Days", "18 Hour", "54 Min", "21 Second"].map(
-                    (item, index) => {
-                      const [num, label] = item.split(" ");
-                      return (
-                        <div
-                          key={index}
-                          className="w-16 bg-white shadow-md px-4 py-2 rounded text-center"
-                        >
-                          <p className="text-2xl font-bold text-gray-800">
-                            {num}
-                          </p>
-                          <p className="md:text-xs text-[10px] text-gray-500 mt-1">
-                            {label}
-                          </p>
-                        </div>
-                      );
-                    }
-                  )}
+                  {countdownLabels.map((item, index) => (
+                    <div
+                      key={index}
+                      className="w-16 bg-white shadow-md px-4 py-2 rounded text-center"
+                    >
+                      <p className="text-2xl font-bold text-gray-800">
+                        {item.value}
+                      </p>
+                      <p className="md:text-xs text-[10px] text-gray-500 mt-1">
+                        {item.label}
+                      </p>
+                    </div>
+                  ))}
                 </div>
 
-                {/* Promo code */}
                 <div className="inline-block bg-[#176d38] text-white px-5 py-2 rounded-full font-bold text-sm tracking-wide">
                   CODE : <span className="text-[#fac714]">FRESH28</span>
                 </div>
               </div>
 
-              {/* Right Image */}
               <div className="w-full lg:w-[50%] relative hidden md:block">
                 <Image
                   src={fruitImage}
@@ -88,4 +132,6 @@ export default function OfferBanner() {
       </div>
     </div>
   );
-}
+};
+
+export default OfferBanner;

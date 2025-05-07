@@ -17,15 +17,13 @@ const HomeNavbar = () => {
   return (
     <div className="absolute top-0 left-0 w-full z-10">
       <Container>
-        <nav className="flex items-center justify-between py-6">
-          {/* Logo */}
+        <div className="flex items-center justify-between py-6">
           <Link href="/">
             <div className="w-48">
               <Image src={logo} alt="Logo" className="w-full" />
             </div>
           </Link>
 
-          {/* Desktop Menu */}
           <ul className="hidden lg:flex gap-16 text-gray-600">
             <li>
               <Link href="/">Home</Link>
@@ -41,7 +39,6 @@ const HomeNavbar = () => {
             </li>
           </ul>
 
-          {/* Icons + Sign In */}
           <div className="hidden lg:flex items-center gap-5 text-white">
             <Link
               href="/favorite"
@@ -69,7 +66,6 @@ const HomeNavbar = () => {
             </button>
           </div>
 
-          {/* Hamburger */}
           <button
             className="lg:hidden text-white flex items-center gap-3"
             onClick={() => setIsOpen(true)}
@@ -87,10 +83,9 @@ const HomeNavbar = () => {
             </Link>
             <MdMenu size={24} />
           </button>
-        </nav>
+        </div>
       </Container>
 
-      {/* Sidebar Overlay */}
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
           isOpen
@@ -100,13 +95,11 @@ const HomeNavbar = () => {
         onClick={() => setIsOpen(false)}
       />
 
-      {/* Sidebar */}
       <div
         className={`fixed top-0 left-0 w-64 h-full bg-[#749B3F] text-white p-6 z-50 transform transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {/* Close button */}
         <div className="flex items-center justify-between mb-6">
           <h4>Fresh Harvests</h4>
           <button onClick={() => setIsOpen(false)}>
@@ -114,7 +107,6 @@ const HomeNavbar = () => {
           </button>
         </div>
 
-        {/* Nav Links */}
         <ul className="space-y-4 font-light">
           <li>
             <Link href="/" onClick={() => setIsOpen(false)}>
@@ -144,7 +136,7 @@ const HomeNavbar = () => {
           <button onClick={() => setModalType("login")}>Sign In</button>
         </ul>
       </div>
-      {/* Modals */}
+
       {modalType === "register" && (
         <RegisterModal
           onClose={() => setModalType(null)}
