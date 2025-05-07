@@ -1,12 +1,11 @@
 "use client";
-import Container from "@/components/shared/Container/Container";
 import Image from "next/image";
-import img1 from "@/assets/Rectangle 3.png";
-import img2 from "@/assets/Rectangle 3.png";
-import img3 from "@/assets/Rectangle 3.png";
-import img4 from "@/assets/Rectangle 3.png";
-import leafLeft from "@/assets/leaf (6).png";
-import leafRight from "@/assets/leaf (7).png";
+import img1 from "../../assets/Rectangle 3.png";
+import img2 from "../../assets/Rectangle 3.png";
+import img3 from "../../assets/Rectangle 3.png";
+import img4 from "../../assets/Rectangle 3.png";
+import leafLeft from "../../assets/leaf (6).png";
+import leafRight from "../../assets/leaf (7).png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";

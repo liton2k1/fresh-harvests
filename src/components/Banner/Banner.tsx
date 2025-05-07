@@ -1,5 +1,5 @@
 import Image from "next/image";
-import bg from "@/assets/banner.png";
+import bg from "../../assets/banner.png";
 import HomeNavbar from "@/components/shared/HomeNavbar/HomeNavbar";
 import BannerContent from "../BannerContent/BannerContent";
 

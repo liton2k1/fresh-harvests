@@ -1,7 +1,7 @@
 import Container from "../shared/Container/Container";
-import arrow from "@/assets/arrow.png";
-import offer from "@/assets/offer.png";
-import app from "@/assets/app.png";
+import arrow from "../../assets/arrow.png";
+import offer from "../../assets/offer.png";
+import app from "../../assets/app.png";
 import Image from "next/image";
 
 const BannerContent = () => {

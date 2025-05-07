@@ -7,7 +7,7 @@ import { useState } from "react";
 import { FaStar, FaShoppingCart, FaHeart } from "react-icons/fa";
 import TabSection from "@/components/TabSection/TabSection";
 import RelatedProducts from "@/components/RelatedProducts/RelatedProducts";
-// import Navbar from "@/components/shared/Navbar/Navbar";
+import Navbar from "@/components/shared/Navbar/Navbar";
 import { useParams } from "next/navigation";
 import { useGetProductByIdQuery } from "@/redux/api/baseApi";
 import Loader from "@/components/shared/Loader/Loader";
@@ -56,7 +56,7 @@ const ProductDetailPage = () => {
 
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mt-20">
           <div className="border rounded-md">

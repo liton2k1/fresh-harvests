@@ -1,16 +1,15 @@
 import Image from "next/image";
-import about from "@/assets/about.png";
+import about from "../../assets/about.png";
 import Container from "../shared/Container/Container";
-import logo from "@/assets/logo.png";
-import lettuce from "@/assets/lettuce.png";
-import group from "@/assets/leaf (7).png";
-import group2 from "@/assets/group.png";
+import logo from "../../assets/logo.png";
+import lettuce from "../../assets/lettuce.png";
+import group from "../../assets/leaf (7).png";
+import group2 from "../../assets/group.png";
 
 const About = () => {
   return (
     <Container>
       <div className="bg-white flex flex-col lg:flex-row items-center lg:gap-10 gap-20 mt-20">
-        {/* Left side content */}
         <div className="relative w-full lg:w-1/2 flex justify-center">
           <Image
             src={about}
@@ -43,7 +42,6 @@ const About = () => {
             />
           </div>
 
-          {/* Product Card */}
           <div className="absolute lg:-bottom-8 md:-bottom-[70px] bottom-[-40px] right-6 lg:right-28 md:right-36 bg-white shadow-lg rounded-md p-2 text-center w-20 md:w-36 leading-none">
             <Image
               src={lettuce}
@@ -60,7 +58,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Right side content */}
         <div className="w-full lg:w-1/2 px-4">
           <span className="bg-[#f1f5ec] text-[#749b3f] text-xs font-semibold px-3 py-1 rounded-md inline-block mb-3">
             About us
