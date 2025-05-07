@@ -1,14 +1,14 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import appStore from "../../../assets/app.png";
-import visa from "../../../assets/visa.png";
-import paypal from "../../../assets/paypal.png";
-import applepay from "../../../assets/applepay.png";
-import logo from "../../../assets/logo.png";
-import call from "../../../assets/call.png";
-import mail from "../../../assets/mail.png";
-import location from "../../../assets/location.png";
+import appStore from "../../../../src/assets/app.png";
+import visa from "../../../../src/assets/visa.png";
+import paypal from "../../../../src/assets/paypal.png";
+import applepay from "../../../../src/assets/applepay.png";
+import logo from "../../../../src/assets/logo.png";
+import call from "../../../../src/assets/call.png";
+import mail from "../../../../src/assets/mail.png";
+import location from "../../../../src/assets/location.png";
 import { FaTwitter, FaInstagram, FaFacebookF } from "react-icons/fa";
 import Container from "../Container/Container";
 

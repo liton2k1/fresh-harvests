@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import fruitImage from "../../assets/fruits.png";
-import bgLeaf from "../../assets/leaf3.png";
-import bgCorner from "../../assets/leaf4.png";
-import mask from "../../assets/leaf2.png";
-import mask2 from "../../assets/leaf1.png";
-import clipPath from "../../assets/leaf5.png";
+import fruitImage from "../../../src/assets/fruits.png";
+import bgLeaf from "../../../src/assets/leaf3.png";
+import bgCorner from "../../../src/assets/leaf4.png";
+import mask from "../../../src/assets/leaf2.png";
+import mask2 from "../../../src/assets/leaf1.png";
+import clipPath from "../../../src/assets/leaf5.png";
 import Container from "../shared/Container/Container";
 
 const OfferBanner = () => {

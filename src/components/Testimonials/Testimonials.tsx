@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import img1 from "../../assets/user.png";
-import img2 from "../../assets/user.png";
-import img3 from "../../assets/user.png";
-import img4 from "../../assets/user.png";
-import leafLeft from "../../assets/leaf6.png";
-import leafRight from "../../assets/leaf7.png";
+import img1 from "../../../src/assets/user.png";
+import img2 from "../../../src/assets/user.png";
+import img3 from "../../../src/assets/user.png";
+import img4 from "../../../src/assets/user.png";
+import leafLeft from "../../../src/assets/leaf6.png";
+import leafRight from "../../../src/assets/leaf7.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";

@@ -1,10 +1,10 @@
 import Image from "next/image";
-import about from "../../assets/about.png";
+import about from "../../../src/assets/about.png";
 import Container from "../shared/Container/Container";
-import logo from "../../assets/logo.png";
-import lettuce from "../../assets/lettuce.png";
-import group from "../../assets/leaf7.png";
-import group2 from "../../assets/group.png";
+import logo from "../../../src/assets/logo.png";
+import lettuce from "../../../src/assets/lettuce.png";
+import group from "../../../src/assets/leaf7.png";
+import group2 from "../../../src/assets/group.png";
 
 const About = () => {
   return (
