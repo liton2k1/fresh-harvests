@@ -3,7 +3,7 @@ import about from "../../assets/about.png";
 import Container from "../shared/Container/Container";
 import logo from "../../assets/logo.png";
 import lettuce from "../../assets/lettuce.png";
-import group from "../../assets/leaf (7).png";
+import group from "../../assets/leaf7.png";
 import group2 from "../../assets/group.png";
 
 const About = () => {

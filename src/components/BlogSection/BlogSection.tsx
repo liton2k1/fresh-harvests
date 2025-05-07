@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import blog1 from "../../assets/blog (1).png";
-import blog2 from "../../assets/blog (2).png";
-import blog3 from "../../assets/blog (3).png";
-import leaf from "../../assets/leaf (7).png";
+import blog1 from "../../assets/blog1.png";
+import blog2 from "../../assets/blog2.png";
+import blog3 from "../../assets/blog3.png";
+import leaf from "../../assets/leaf7.png";
 import { IoArrowForward } from "react-icons/io5";
 
 const blogPosts = [

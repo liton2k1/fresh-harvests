@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import fruitImage from "../../assets/fruits.png";
-import bgLeaf from "../../assets/leaf (3).png";
-import bgCorner from "../../assets/leaf (4).png";
-import mask from "../../assets/leaf (2).png";
-import mask2 from "../../assets/leaf (1).png";
-import clipPath from "../../assets/leaf (5).png";
+import bgLeaf from "../../assets/leaf3.png";
+import bgCorner from "../../assets/leaf4.png";
+import mask from "../../assets/leaf2.png";
+import mask2 from "../../assets/leaf1.png";
+import clipPath from "../../assets/leaf5.png";
 import Container from "../shared/Container/Container";
 
 const OfferBanner = () => {

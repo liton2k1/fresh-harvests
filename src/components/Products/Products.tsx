@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import leaf from "../../assets/leaf (7).png";
-import leaf2 from "../../assets/leaf (6).png";
+import leaf from "../../assets/leaf7.png";
+import leaf2 from "../../assets/leaf6.png";
 import {
   useGetCategoriesQuery,
   useGetProductsQuery,
